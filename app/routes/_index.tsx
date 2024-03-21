@@ -1,41 +1,32 @@
-import type { MetaFunction } from "@remix-run/node";
-
+import type { LinksFunction, MetaFunction } from "@remix-run/node";
+import { Link } from "@remix-run/react";
+import homeStyles from "../styles/home.css";
 export const meta: MetaFunction = () => {
   return [
-    { title: "New Remix App" },
-    { name: "description", content: "Welcome to Remix!" },
+    { title: "Sticky Notes" },
+    { name: "description", content: "Welcome to Sticky Notes" },
   ];
 };
 
 export default function Index() {
   return (
-    <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.8" }}>
-      <h1>Welcome to Remix</h1>
-      <ul>
-        <li>
-          <a
-            target="_blank"
-            href="https://remix.run/tutorials/blog"
-            rel="noreferrer"
-          >
-            15m Quickstart Blog Tutorial
-          </a>
-        </li>
-        <li>
-          <a
-            target="_blank"
-            href="https://remix.run/tutorials/jokes"
-            rel="noreferrer"
-          >
-            Deep Dive Jokes App Tutorial
-          </a>
-        </li>
-        <li>
-          <a target="_blank" href="https://remix.run/docs" rel="noreferrer">
-            Remix Docs
-          </a>
-        </li>
-      </ul>
-    </div>
+    <main id="content">
+      <h1>Having sticky notes will save your time a lot</h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, dolorem.</p>
+      <p id="cta">
+        <Link to="/notes">
+          Try Now!
+        </Link>
+      </p>
+    </main>
   );
+}
+
+export const links: LinksFunction = () => {
+  return [
+    {
+      rel: "stylesheet",
+      href: homeStyles,
+    }
+  ]
 }
