@@ -7,7 +7,7 @@ const MainNavigation = () => {
                     <NavLink to="/">Home</NavLink>
                 </li>
                 <li className="nav-item">
-                    <NavLink to="/notes">My Notes</NavLink>
+                    <NavLink to="/books">Add Books</NavLink>
                 </li>
             </ul>
         </nav>
