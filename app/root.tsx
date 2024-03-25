@@ -8,6 +8,8 @@ import {
 import styles from "./styles/main.css";
 import type { LinksFunction } from "@remix-run/node";
 import MainNavigation from "./component/MainNavigation";
+import { AuthProvider } from "./component/AuthProvider";
+import SiteHeader from "./component/SiteHeader";
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
@@ -18,10 +20,13 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
-        <header>
-          <MainNavigation />
-        </header>
-        {children}
+        <AuthProvider>
+          <header>
+            <MainNavigation />
+          </header>
+          <SiteHeader />
+          {children}
+        </AuthProvider>
         <ScrollRestoration />
         <Scripts />
       </body>

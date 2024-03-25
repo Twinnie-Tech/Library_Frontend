@@ -5,13 +5,17 @@ import { redirect } from '@remix-run/node';
 import { createBook, getBooks } from '~/api/Book';
 import { useLoaderData } from '@remix-run/react';
 import { DateTime } from 'luxon';
+import { AuthenticatedTemplate } from '@azure/msal-react';
 const books = () => {
     const books = useLoaderData();
     return (
-        <div>
-            <NewBook />
-            <BookList books={books} />
-        </div>
+        <AuthenticatedTemplate>
+            <div>
+                <NewBook />
+                <BookList books={books} />
+            </div>
+        </AuthenticatedTemplate>
+
     )
 }
 
