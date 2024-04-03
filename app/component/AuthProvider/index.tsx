@@ -45,6 +45,5 @@ function AutoLogin({ children }: any) {
         }
     }, [error]);
     const { accounts } = useMsal();
-    console.log(accounts);
     return <>{children}</>
 }
