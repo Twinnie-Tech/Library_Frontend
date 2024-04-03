@@ -10,6 +10,7 @@ import type { LinksFunction } from "@remix-run/node";
 import MainNavigation from "./component/MainNavigation";
 import { AuthProvider } from "./component/AuthProvider";
 import SiteHeader from "./component/SiteHeader";
+
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
